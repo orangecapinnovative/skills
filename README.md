@@ -3,6 +3,7 @@
 ## Skills List
 
 - [Bruno API Client](skills/bruno-api-client/SKILL.md)
+- [Nest.js Best Practices](skills/nestjs-best-practices/SKILL.md) (Credit: [kadajett](https://www.skills.sh/kadajett/agent-nestjs-skills/nestjs-best-practices))
 
 ## How to Use
 
