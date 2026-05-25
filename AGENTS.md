@@ -107,3 +107,21 @@ cp -r skills/{skill-name} ~/.claude/skills/
 Add the skill to project knowledge or paste SKILL.md contents into the conversation.
 
 If the skill requires network access, instruct users to add required domains at `claude.ai/settings/capabilities`.
+
+### Skill Registry Maintenance Rule
+
+**After creating any new skill, you MUST update the [Skill Registry](#skill-registry) section at the bottom of this file.** Add one row to the registry table with the skill name, a one-line description, and the date added. Do not skip this step.
+
+---
+
+## Skill Registry
+
+All skills in this repository. Keep this table up to date — add a new row every time a skill is created.
+
+| Skill | Description | Added |
+|-------|-------------|-------|
+| [airbnb-js-style-guide](skills/airbnb-js-style-guide/) | Enforces Airbnb JavaScript Style Guide when writing JS, JSX, or TypeScript code. | 2026-05-25 |
+| [bruno-api-client](skills/bruno-api-client/) | Expert in Bruno API client — writing .bru files, managing collections, scripting with the bru/req/res API, and building Git-first API test workflows. | — |
+| [nestjs-best-practices](skills/nestjs-best-practices/) | NestJS best practices and architecture patterns for building production-ready applications. | — |
+| [schema-indexing](skills/schema-indexing/) | Create MongoDB index management scripts for NestJS + Mongoose projects. Enforces the "indexes as scripts, never inline" pattern. | — |
+| [tailwindcss-styling](skills/tailwindcss-styling/) | Enforces Tailwind CSS utility classes via className instead of inline styles, using canonical class syntax. | — |
