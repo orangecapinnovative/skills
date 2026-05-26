@@ -7,6 +7,7 @@
 - [Schema Indexing](skills/schema-indexing/SKILL.md)
 - [Tailwind CSS Styling](skills/tailwindcss-styling/SKILL.md)
 - [Airbnb JS Style Guide](skills/airbnb-js-style-guide/SKILL.md)
+- [Generate OpenAPI Spec](skills/openapi-spec-generation/SKILL.md)
 
 ## How to Use
 
