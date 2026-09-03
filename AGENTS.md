@@ -125,3 +125,4 @@ All skills in this repository. Keep this table up to date — add a new row ever
 | [nestjs-best-practices](skills/nestjs-best-practices/) | NestJS best practices and architecture patterns for building production-ready applications. | — |
 | [schema-indexing](skills/schema-indexing/) | Create MongoDB index management scripts for NestJS + Mongoose projects. Enforces the "indexes as scripts, never inline" pattern. | — |
 | [tailwindcss-styling](skills/tailwindcss-styling/) | Enforces Tailwind CSS utility classes via className instead of inline styles, using canonical class syntax. | — |
+| [oci-iso-29110-software-implementation](skills/oci-iso-29110-software-implementation/) | Generate ISO/IEC 29110-5-1-2:2025 work-product documents (Software Design, Components, Implementation Environment, Maintenance, Operation Guidelines, Project Repository, Repository Backup) as .docx files. | 2026-09-03 |
