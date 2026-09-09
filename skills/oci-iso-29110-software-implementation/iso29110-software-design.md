@@ -114,7 +114,42 @@ Remind the user:
 
 ---
 
-## Step 4 — Generate the document
+## Step 4 — Generate Mermaid diagrams (great to have)
+
+For each use-case collected in Step 1, attempt to write a Mermaid diagram and render it to a PNG for embedding in Section 2.1. This step is optional — drop a diagram when it becomes too complex (see criteria below) and fall back to the text description.
+
+### Diagram type
+
+Use a **Sequence Diagram** by default. Switch to another type only when it communicates the flow more clearly:
+
+| Situation | Alternative type |
+|---|---|
+| Showing module/class relationships | Class diagram |
+| Showing data model | Entity-Relationship (ER) |
+| Showing a branching decision flow | Flowchart |
+
+### How to render
+
+1. Write the Mermaid source to a temporary `.mmd` file (e.g. `sd_m1.mmd`).
+2. Render to PNG using the Mermaid CLI:
+   ```bash
+   npx @mermaid-js/mermaid-cli -i sd_m1.mmd -o sd_m1.png -b white
+   ```
+3. If `mmdc` is not available globally, the `npx` call above installs it on-demand — no separate install step required.
+4. Embed the output PNG in Section 2.1 via `ImageRun`, following **Rule 2** in `iso29110-docx-rules.md` for dimension handling (read actual pixel size with `image-size`, scale proportionally to fit the usable body width of 630 pt).
+
+### Drop the diagram (fall back to text) when
+
+- The diagram would have more than **8 participants** or **15 steps** — a text description is clearer.
+- The Mermaid source fails to render correctly after **one retry** (fix attempt).
+- The use-case is a purely client-side UI interaction with no meaningful backend sequence.
+- Generating the diagram would require information the agent does not have and cannot reasonably infer.
+
+When a diagram is dropped, keep the text description for that use-case and leave the manual-insertion note in the document.
+
+---
+
+## Step 5 — Generate the document
 
 Use the `docx` npm package (preinstalled; `require('docx')` directly). Write a Node.js script and run it with `node`.
 
@@ -170,7 +205,8 @@ Section heading: "{ProjectName} Software Design"
       UX/UI Design: [PLACEHOLDER — add Figma link]
       [Group use-cases by role, numbered SD-M1, SD-M2, … per module/role]
       [Each use-case: SD-Mn-k – {Actor} {action}]
-      Note: Sequence diagram images must be inserted manually.
+      [If a Mermaid PNG was generated for this use-case: embed it here via ImageRun]
+      [If no diagram was generated: leave the text description only and note "Diagram to be inserted manually"]
 
   2.2 Format of Input/Output Data
       [request payload format (e.g. JSON), response format, key headers used]
@@ -216,13 +252,13 @@ Output file: `{ProjectName}_Software_Design_V1.0.docx` in the current directory.
 
 ---
 
-## Step 5 — Post-generation checklist (tell the user)
+## Step 6 — Post-generation checklist (tell the user)
 
 After the file is generated, remind the user to:
 
 1. **Fill in author name** in the cover page and Document History row 1.
 2. **Add reviewer rows** to Document History when the document is reviewed.
-3. **Insert sequence diagram images** (or embed Figma link) in Section 2.1.
+3. **Review sequence diagrams** in Section 2.1 — Mermaid-generated images are embedded where possible; any use-case marked "Diagram to be inserted manually" still needs a diagram added by hand.
 4. **Add GitHub / repository URLs** in Section 3.
 5. **Verify all external service descriptions** in Sections 1.3 and 1.4 are accurate.
 6. **Update "Last Updated" date** after any revision.
