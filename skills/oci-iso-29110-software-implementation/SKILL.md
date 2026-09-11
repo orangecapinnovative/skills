@@ -1,6 +1,6 @@
 ---
 name: oci-iso-29110-software-implementation
-description: Generate ISO/IEC 29110-5-1-2:2025 (VSE Generic Basic Profile) work-product documents as .docx files for a software project. Use when asked to create or regenerate any of the seven ISO 29110 implementation documents: Software Design, Software Components, Implementation Environment, Maintenance Document, Operation Guidelines, Project Repository, or Repository Backup.
+description: "Generate ISO/IEC 29110-5-1-2:2025 (VSE Generic Basic Profile) work-product documents as .docx files for a software project. Use when asked to create or regenerate any of the seven ISO 29110 implementation documents: Software Design, Software Components, Implementation Environment, Maintenance Document, Operation Guidelines, Project Repository, or Repository Backup."
 ---
 
 # OCI — ISO 29110 Software Implementation Documents
